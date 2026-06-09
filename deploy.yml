@@ -29,7 +29,7 @@ jobs:
       # Replace YOUR-BUCKET-NAME with your actual bucket name (e.g. cloud-course-a123)
       - name: Upload files to GCS Bucket
         run: |
-          gsutil -m rsync -r -d . gs://YOUR-BUCKET-NAME
+          gsutil -m rsync -r -d . gs://abdulmannan-ansari
         # -m  : parallel/multi-threaded upload (faster)
         # rsync -r : recursively sync all files
         # -d  : delete files in bucket that no longer exist in repo
