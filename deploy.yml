@@ -1,0 +1,35 @@
+name: Deploy to Google Cloud Storage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Upload Website to GCS
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Authenticate with Google Cloud using the Service Account JSON key
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      # Step 3: Set up the gcloud CLI
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      # Step 4: Upload website files to the GCS bucket
+      # Replace YOUR-BUCKET-NAME with your actual bucket name (e.g. cloud-course-a123)
+      - name: Upload files to GCS Bucket
+        run: |
+          gsutil -m rsync -r -d . gs://YOUR-BUCKET-NAME
+        # -m  : parallel/multi-threaded upload (faster)
+        # rsync -r : recursively sync all files
+        # -d  : delete files in bucket that no longer exist in repo

@@ -1,0 +1,179 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: #fff;
+  text-align: center;
+  padding: 48px 20px 36px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+header .subtitle {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background-color: #0d47a1;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Main Content ===== */
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background: #fff;
+  border-radius: 10px;
+  padding: 36px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-left: 5px solid #1a73e8;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  color: #1a73e8;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+/* ===== Info Cards (index.html) ===== */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  color: #1a73e8;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.card code {
+  background: #e8f0fe;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #1558d6;
+}
+
+/* ===== Tech Grid (about.html) ===== */
+section h2 {
+  font-size: 1.6rem;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+section > p {
+  font-size: 1rem;
+  margin-bottom: 28px;
+  color: #555;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border-top: 4px solid #1a73e8;
+  transition: transform 0.2s;
+}
+
+.tech-card:hover {
+  transform: translateY(-3px);
+}
+
+.tech-card h3 {
+  color: #0d47a1;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.tech-card ul {
+  padding-left: 18px;
+}
+
+.tech-card ul li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #0d47a1;
+  color: #cce0ff;
+  text-align: center;
+  padding: 18px;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
